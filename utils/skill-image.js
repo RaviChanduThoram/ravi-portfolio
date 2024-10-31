@@ -45,8 +45,10 @@ import mongoDB from '/public/svg/skills/mongoDB.svg';
 import mysql from '/public/svg/skills/mysql.svg';
 import nextJS from '/public/svg/skills/nextJS.svg';
 import nginx from '/public/svg/skills/nginx.svg';
+import ngrx from '/public/svg/skills/ngrx.png';
 import numpy from '/public/svg/skills/numpy.svg';
 import nuxtJS from '/public/svg/skills/nuxtJS.svg';
+import node from '/public/svg/skills/node.png';
 import opencv from '/public/svg/skills/opencv.svg';
 import photoshop from '/public/svg/skills/photoshop.svg';
 import php from '/public/svg/skills/php.svg';
@@ -56,7 +58,9 @@ import premierepro from '/public/svg/skills/premierepro.svg';
 import python from '/public/svg/skills/python.svg';
 import pytorch from '/public/svg/skills/pytorch.svg';
 import react from '/public/svg/skills/react.svg';
+import redux from '/public/svg/redux.svg';
 import ruby from '/public/svg/skills/ruby.svg';
+import springboot from '/public/svg/skills/springboot.png';
 import selenium from '/public/svg/skills/selenium.svg';
 import sketch from '/public/svg/skills/sketch.svg';
 import strapi from '/public/svg/skills/strapi.svg';
@@ -145,6 +149,14 @@ export const skillsImage = (skill) => {
       return java;
     case 'kotlin':
       return kotlin;
+      case 'node':
+      return node;
+      case 'redux':
+      return redux;
+      case 'springboot':
+      return springboot;
+      case 'ngrx':
+        return ngrx;
     case 'julia':
       return julia;
     case 'matlab':

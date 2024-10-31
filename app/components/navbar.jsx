@@ -1,42 +1,93 @@
 // @flow strict
+"use client";
 import Link from "next/link";
-
+import { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
   return (
     <nav className="bg-transparent">
-      <div className="flex items-center justify-between py-5">
-        <div className="flex flex-shrink-0 items-center">
-          <Link
-            href="/"
-            className=" text-[#16f2b3] text-3xl font-bold">
-            ABU SAID
+   <div className="flex items-center justify-between py-5 px-4 md:px-8 w-full">
+        {/* Left Side: Logo */}
+        <div className="flex flex-shrink-0">
+          <Link href="/" className="text-[#16f2b3] text-3xl font-bold">
+            Ravi Chandu
           </Link>
         </div>
 
-        <ul className="mt-4 flex h-screen max-h-0 w-full flex-col items-start text-sm opacity-0 md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 md:opacity-100" id="navbar-default">
+        {/* Desktop Links */}
+        <ul className="hidden md:flex md:space-x-4 items-center">
           <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#about">
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">ABOUT</div>
+            <Link href="/#about" className="text-sm text-white hover:text-pink-600">
+              ABOUT
             </Link>
           </li>
           <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#experience"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">EXPERIENCE</div></Link>
+            <Link href="/#experience" className="text-sm text-white hover:text-pink-600">
+              EXPERIENCE
+            </Link>
           </li>
           <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#skills"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">SKILLS</div></Link>
+            <Link href="/#skills" className="text-sm text-white hover:text-pink-600">
+              SKILLS
+            </Link>
           </li>
           <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#education"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">EDUCATION</div></Link>
+            <Link href="/#education" className="text-sm text-white hover:text-pink-600">
+              EDUCATION
+            </Link>
           </li>
           <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/blog"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">BLOGS</div></Link>
-          </li>
-          <li>
-            <Link className="block px-4 py-2 no-underline outline-none hover:no-underline" href="/#projects"><div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">PROJECTS</div></Link>
+            <Link href="/#projects" className="text-sm text-white hover:text-pink-600">
+              PROJECTS
+            </Link>
           </li>
         </ul>
+
+        {/* Hamburger Menu Icon for Mobile */}
+        <button
+          onClick={toggleMenu}
+          className="text-white md:hidden focus:outline-none"
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? <HiX size={30} /> : <HiMenu size={30} />}
+        </button>
       </div>
+     
+        {isOpen && (
+    <ul className="top-16 left-0 right-0 z-20 flex flex-col bg-custom text-white pl-4  pt-4 pb-4 space-y-4 md:hidden">
+    <li>
+      <Link href="/#about" onClick={toggleMenu} className="hover:text-pink-600">
+        ABOUT
+      </Link>
+    </li>
+    <li>
+      <Link href="/#experience" onClick={toggleMenu} className="hover:text-pink-600">
+        EXPERIENCE
+      </Link>
+    </li>
+    <li>
+      <Link href="/#skills" onClick={toggleMenu} className="hover:text-pink-600">
+        SKILLS
+      </Link>
+    </li>
+    <li>
+      <Link href="/#education" onClick={toggleMenu} className="hover:text-pink-600">
+        EDUCATION
+      </Link>
+    </li>
+    <li>
+      <Link href="/#projects" onClick={toggleMenu} className="hover:text-pink-600">
+        PROJECTS
+      </Link>
+    </li>
+  </ul>
+)}
+
+
     </nav>
   );
 };

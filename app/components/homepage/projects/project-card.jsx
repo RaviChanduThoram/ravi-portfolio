@@ -1,6 +1,7 @@
 // @flow strict
 
 import * as React from 'react';
+import { AiOutlineLink, AiOutlineEye } from 'react-icons/ai';
 
 function ProjectCard({ project }) {
 
@@ -39,11 +40,11 @@ function ProjectCard({ project }) {
             <span className=" text-white">tools:</span>
             <span className="text-gray-400">{` ['`}</span>
             {
-              project.tools.map((tag, i) => (
+              project.techStack.map((tag, i) => (
                 <React.Fragment key={i}>
                   <span className="text-amber-300">{tag}</span>
                   {
-                    project.tools.length - 1 !== i &&
+                    project.techStack.length - 1 !== i &&
                     <span className="text-gray-400">{`', '`}</span>
                   }
                 </React.Fragment>
@@ -51,17 +52,23 @@ function ProjectCard({ project }) {
             }
             <span className="text-gray-400">{"],"}</span>
           </div>
-          <div>
-            <span className="ml-4 lg:ml-8 mr-2 text-white">myRole:</span>
-            <span className="text-orange-400">{project.role}</span>
-            <span className="text-gray-400">,</span>
-          </div>
+
           <div className="ml-4 lg:ml-8 mr-2">
             <span className="text-white">Description:</span>
             <span className="text-cyan-400">{' ' + project.description}</span>
             <span className="text-gray-400">,</span>
           </div>
           <div><span className="text-gray-400">{`};`}</span></div>
+
+          {/* Center-aligned buttons */}
+          {/* <div className="flex justify-center gap-4 mt-4">
+            <a href={project.linked} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#1a1443] text-white px-4 py-2 rounded-md transition hover:bg-violet-500">
+              <AiOutlineLink /> Code
+            </a>
+            <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-md transition hover:bg-green-700">
+              <AiOutlineEye /> Live
+            </a>
+          </div> */}
         </code>
       </div>
     </div>
