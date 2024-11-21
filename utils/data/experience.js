@@ -18,10 +18,10 @@ export const experiences = [
     duration: "(Jun 2019 - Nov 2021)"
   },
   {
-    id: 3,
+    id: 4,
     title: "Software Developer (Intern)",
     company: "Full Creative",
-    duration: "(Jan 2019 - Mar 2019)"
+    duration: "(Jun 2018 - May 2019)"
   },
 
 ]
