@@ -8,5 +8,5 @@ export const personalData = {
   address: 'Kent, Ohio, USA',
   github: 'https://github.com/RaviChanduThoram',
   linkedIn: 'https://www.linkedin.com/in/thoram-ravi/',
-  resume: 'https://drive.google.com/file/d/1f2JuixMn-28VoypKS7A9UiDDIO3ZgzcH/view?usp=share_link',
+  resume: 'https://drive.google.com/file/d/1ujvCn_8nlKokhlqlYkg9WusFQMR_kJoR/view?usp=share_link',
 }
